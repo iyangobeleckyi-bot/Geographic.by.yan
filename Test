@@ -1,0 +1,161 @@
+<!doctype html>
+
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Музей Австралії</title>
+  <meta name="description" content="Віртуальний музей Австралії з інформацією про тварин, фото з Unsplash і стильним дизайном." />
+  <style>
+    :root{
+      --accent:#0ea5a4; /* teal */
+      --dark:#0b1020;
+      --muted:#64748b;
+      --card:#0f1724;
+      --glass: rgba(255,255,255,0.06);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071426 0%, #0b1220 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}header{
+  backdrop-filter: blur(6px);
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:40
+}
+.brand{display:flex;align-items:center;gap:16px}
+.logo{width:56px;height:56px;border-radius:12px;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,0.04)}
+.logo img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-size:20px;margin:0}
+nav{display:flex;gap:18px;align-items:center}
+nav a{font-weight:600;opacity:0.95}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;padding:48px 32px;align-items:center}
+
+.intro{max-width:720px}
+.eyebrow{color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-size:12px}
+.headline{font-size:42px;line-height:1.02;margin:12px 0 10px}
+.lead{color: #cfe7ff;opacity:0.9;font-size:17px}
+
+.cta{margin-top:20px;display:flex;gap:12px}
+.btn{background:var(--accent);color:#011219;padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:0 6px 18px rgba(14,165,164,0.12);border:none;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dff7f6}
+
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,0.03)}
+.hero-card img{width:100%;height:320px;object-fit:cover;border-radius:12px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:13px}
+
+main{padding:20px 32px 80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);min-height:220px;display:flex;flex-direction:column}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+.card h3{margin:10px 0 6px}
+.card p{color:var(--muted);margin:0;font-size:14px}
+
+.gallery{margin-top:28px}
+.masonry{column-count:3;column-gap:12px}
+.masonry img{width:100%;margin:0 0 12px;border-radius:10px;display:block}
+@media(max-width:1000px){.hero{grid-template-columns:1fr;}.masonry{column-count:2}}
+@media(max-width:640px){.masonry{column-count:1}.hero-card img{height:220px}}
+
+footer{padding:36px 32px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.credits{color:var(--muted);font-size:13px}
+
+/* subtle interactions */
+.card:hover{transform:translateY(-6px);transition:transform .25s ease}
+.logo:hover{transform:scale(1.03)}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"><img src="https://source.unsplash.com/80x80/?australia,kangaroo" alt="Логотип: кенгуру" loading="lazy"/></div>
+      <div>
+        <h1>Музей Австралії</h1>
+        <div style="color:var(--muted);font-size:13px">Віртуальна експозиція — тварини, історія, природа</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">Про музей</a>
+      <a href="#exhibits">Експонати</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contact">Контакт</a>
+    </nav>
+  </header>  <section class="hero">
+    <div class="intro">
+      <div class="eyebrow">Вітальня</div>
+      <div class="headline">Ласкаво просимо в Музей Австралії</div>
+      <div class="lead">Дізнайся про унікальну дику природу Австралії: кенгуру, коали, ехидни та багато іншого. Велика фотогалерея взята з Unsplash — усі зображення підбираються автоматично.</div>
+      <div class="cta">
+        <button class="btn" onclick="document.getElementById('exhibits').scrollIntoView({behavior:'smooth'})">Дослідити експонати</button>
+        <a class="btn secondary" href="#gallery">Переглянути галерею</a>
+      </div><section id="about" style="margin-top:26px">
+    <h2 style="margin:0 0 6px">Про музей</h2>
+    <p style="color:var(--muted);max-width:70%">Цей віртуальний музей створений для знайомства з флорою і фауною Австралії. Тут зібрані факти, фото та цікаві історії про головних мешканців континенту.</p>
+  </section>
+</div>
+
+<aside class="hero-card">
+  <img src="https://source.unsplash.com/800x600/?kangaroo,joey" alt="Кенгуру з джої" loading="lazy"/>
+  <div class="meta"><div>Фото: Unsplash</div><div>Останнє оновлення: 2026</div></div>
+</aside>
+
+  </section>  <main>
+    <section id="exhibits">
+      <h2>Популярні експонати</h2>
+      <div class="grid" style="margin-top:14px">
+        <article class="card">
+          <img src="https://source.unsplash.com/640x480/?kangaroo" alt="Кенгуру" loading="lazy"/>
+          <h3>Кенгуру</h3>
+          <p>Кенгуру — символ Австралії. Вони стрибають великими стрибками й носять своїх дитинчат у сумках — джоєв.</p>
+        </article><article class="card">
+      <img src="https://source.unsplash.com/640x480/?koala" alt="Коала" loading="lazy"/>
+      <h3>Коала</h3>
+      <p>Коали — сумчасті тварини, що живуть на евкаліптових деревах. Хоч вони виглядають милими, їхній раціон дуже спеціалізований.</p>
+    </article>
+
+    <article class="card">
+      <img src="https://source.unsplash.com/640x480/?australia,landscape" alt="Пейзаж Австралії" loading="lazy"/>
+      <h3>Пейзажі</h3>
+      <p>Від червоних рівнин до тропічних лісів — Австралія має різноманітні біоми, які підтримують унікальну екосистему.</p>
+    </article>
+
+    <article class="card">
+      <img src="https://source.unsplash.com/640x480/?platypus" alt="Унікальні види: качкодзьоб" loading="lazy"/>
+      <h3>Унікальні види</h3>
+      <p>Качкодзьоб, ехидна й інші — це приклади дивовижної еволюції Австралії.</p>
+    </article>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <h2>Галерея</h2>
+  <div class="masonry" aria-live="polite" style="margin-top:12px">
+    <!-- Unsplash random images: change query to fetch other теми -->
+    <img src="https://source.unsplash.com/600x800/?kangaroo" alt="Кенгуру в природі" loading="lazy"/>
+    <img src="https://source.unsplash.com/600x800/?koala" alt="Коала на дереві" loading="lazy"/>
+    <img src="https://source.unsplash.com/600x800/?australia,desert" alt="Пустеля Австралії" loading="lazy"/>
+    <img src="https://source.unsplash.com/600x800/?australia,reef" alt="Великий бар'єрний риф" loading="lazy"/>
+    <img src="https://source.unsplash.com/600x800/?platypus" alt="Качкодзьоб" loading="lazy"/>
+    <img src="https://source.unsplash.com/600x800/?wildlife,australia" alt="Дика природа Австралії" loading="lazy"/>
+  </div>
+</section>
+
+<section id="contact" style="margin-top:32px">
+  <h2>Контакт і джерела</h2>
+  <p style="color:var(--muted)">Всі фотографії динамічно підвантажуються з Unsplash (через їхнє офіційне джерело зображень). Якщо хочеш конкретні фото або хочеш інтегрувати API Unsplash — можу додати.</p>
+</section>
+
+  </main>  <footer>
+    <div class="credits">© Музей Австралії — Віртуальна експозиція • Зображення з Unsplash</div>
+    <div style="color:var(--muted);font-size:13px">Зроблено з ❤️ — можу доопрацювати під мобіль або React-версію</div>
+  </footer>  <script>
+    // невелика функція: прелоад для кращого UX
+    (function(){
+      const imgs = document.querySelectorAll('img[loading="lazy"]');
+      imgs.forEach(img=>{
+        img.addEventListener('error',()=>{ img.style.opacity=0.6; img.alt += ' (не вдалося завантажити)'; });
+      })
+    })();
+  </script></body>
+</html>
